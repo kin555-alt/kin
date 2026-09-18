@@ -1,6 +1,3 @@
-
-
-Perfume collection · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +33,7 @@ body{
 .scrim{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(28,8,12,.5) 0%,rgba(28,8,12,.2) 42%,rgba(28,8,12,.5) 100%)}
 :focus-visible{outline:3px solid var(--sun-yellow);outline-offset:3px;border-radius:6px}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
- 
+
 /* top bar */
 .topbar{
   position:sticky;top:0;z-index:10;direction:ltr;
@@ -50,7 +47,7 @@ body{
 .clock-time .ampm{font-size:.5em;margin-inline-start:.4em;color:var(--sun-yellow);letter-spacing:.06em}
 .clock-date{display:flex;flex-wrap:wrap;gap:.1rem .7rem;font-size:.82rem;color:var(--text-dim)}
 .clock-date .tz{color:var(--sun-yellow);font-weight:600}
- 
+
 /* buttons */
 .btn{
   font:inherit;font-weight:600;font-size:.95rem;min-height:44px;padding:.55rem 1.15rem;
@@ -67,13 +64,13 @@ body{
 .btn.danger.armed{background:#B3261E;border-color:#B3261E;color:#fff}
 .btn.sm{min-height:38px;padding:.3rem .9rem;font-size:.88rem}
 .btn:disabled{opacity:.55;cursor:progress}
- 
+
 /* hero */
 .wrap{max-width:1040px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 5rem}
 .hero{padding:clamp(2.2rem,8vw,5rem) 0 .6rem;direction:ltr}
 .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.8rem,9vw,5.4rem);line-height:.98;margin:0;letter-spacing:.01em;text-shadow:0 2px 26px rgba(30,6,10,.75)}
 .hero p{margin:.7rem 0 0;font-size:1.05rem;text-shadow:0 1px 12px rgba(30,6,10,.8)}
- 
+
 /* section titles */
 .line-title{
   display:inline-flex;align-items:baseline;gap:.9rem;margin:2.2rem 0 1rem;padding:.3rem 1.1rem .35rem;
@@ -82,7 +79,7 @@ body{
 }
 .line-title h2{font-family:var(--serif);font-weight:600;font-size:1.55rem;line-height:1.2;margin:0}
 .line-title span{font-size:.92rem;color:var(--sun-yellow);direction:rtl}
- 
+
 /* cards */
 .card{
   display:flex;gap:1.5rem;direction:rtl;
@@ -105,13 +102,13 @@ body{
 .media svg{width:78%;height:auto;max-height:270px;filter:drop-shadow(0 10px 12px rgba(60,10,5,.4))}
 .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .empty{padding:2rem;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:18px;direction:ltr}
- 
+
 @media (max-width:680px){
   .card,.card.flip{flex-direction:column;gap:1rem}
   .media{order:-1;flex:none;min-height:220px;width:100%}
   .row{grid-template-columns:1fr}
 }
- 
+
 /* control panel */
 dialog{
   border:1px solid var(--line);border-radius:20px;padding:0;color:var(--text);
@@ -151,7 +148,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
   .add-grid{grid-template-columns:1fr}
   .preview{min-height:210px}
 }
- 
+
 .m-list{list-style:none;margin:0;padding:0;display:grid;gap:.6rem;outline:none}
 .m-row{display:flex;align-items:center;gap:.9rem;padding:.55rem;border:1px solid var(--line);border-radius:14px;background:rgba(255,235,225,.05)}
 .thumb{flex:0 0 56px;height:72px;border-radius:10px;overflow:hidden;position:relative;display:grid;place-items:center;background:linear-gradient(165deg,#FFD65E,#FF8A24 55%,#C2461C)}
@@ -163,7 +160,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
 .m-actions{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:flex-end}
 .m-foot{margin-top:1.3rem;padding-top:1rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;justify-content:space-between}
 .m-foot p{margin:0;font-size:.85rem;color:var(--text-dim);max-width:42ch}
- 
+
 .toast{
   position:fixed;left:50%;bottom:1.4rem;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:50;
   background:rgba(34,10,14,.94);border:1px solid var(--sun-yellow);color:var(--text);
@@ -178,7 +175,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
 </style>
 </head>
 <body>
- 
+
 <!-- shared gradients for the bottle drawings -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
@@ -193,7 +190,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
     </linearGradient>
   </defs>
 </svg>
- 
+
 <!-- sunset over Manhattan -->
 <svg id="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
   <defs>
@@ -235,7 +232,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
   </g>
 </svg>
 <div class="scrim"></div>
- 
+
 <header class="topbar">
   <div class="clock">
     <div class="clock-time" aria-label="Current time"><span id="hms">--:--:--</span><span class="ampm" id="ampm"></span></div>
@@ -243,7 +240,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
   </div>
   <button class="btn primary" id="openPanel" type="button">Control Panel</button>
 </header>
- 
+
 <main class="wrap">
   <section class="hero">
     <h1>Perfume Collection</h1>
@@ -251,19 +248,19 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
   </section>
   <div id="list"></div>
 </main>
- 
+
 <dialog id="panel" aria-labelledby="panelTitle">
   <div class="panel-in">
     <header class="panel-head">
       <h2 id="panelTitle">Control Panel</h2>
       <button class="icon-btn" id="closePanel" type="button" aria-label="Close Control Panel">&times;</button>
     </header>
- 
+
     <div class="tabs" role="tablist" aria-label="Control Panel sections">
       <button role="tab" id="tab-add" type="button" aria-selected="true" aria-controls="pane-add">Add perfume</button>
       <button role="tab" id="tab-manage" type="button" aria-selected="false" aria-controls="pane-manage">Manage collection</button>
     </div>
- 
+
     <section id="pane-add" role="tabpanel" aria-labelledby="tab-add">
       <div class="add-grid">
         <div class="add-media">
@@ -284,7 +281,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
             </select>
           </div>
         </div>
- 
+
         <div class="add-fields">
           <div class="field">
             <label for="f-name">Name (English)</label>
@@ -317,7 +314,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
         </div>
       </div>
     </section>
- 
+
     <section id="pane-manage" role="tabpanel" aria-labelledby="tab-manage" hidden>
       <ul class="m-list" id="manageList" tabindex="-1"></ul>
       <div class="m-foot">
@@ -327,13 +324,13 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
     </section>
   </div>
 </dialog>
- 
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
- 
+
 <script>
 (function(){
   "use strict";
- 
+
   /* ---------- constants and data ---------- */
   const KEY = "perfume-collection-v1";
   const TZ = "Asia/Jerusalem";
@@ -344,7 +341,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
     { key: "Other",   en: "More perfumes", ar: "عطور أخرى" }
   ];
   const LABELS = { desc: "الوصف", season: "الفصل والوقت", occasions: "المناسبات", smoke: "الأداء مع التدخين/الفيب" };
- 
+
   const DEFAULTS = [
     { id: "spanish-tobacco", name: "Spanish Tobacco", line: "Tobacco", color: "#8B4A1C", image: null,
       desc: "مزيج فخم يجمع بين التبغ الإسباني، التوابل الدافئة، والتونكا مع لمسات فاكهية ناعمة.",
@@ -407,7 +404,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
       occasions: "بديل فخم للمدرسة، اللقاءات الاجتماعية الرسمية، والمشاوير المرتبة.",
       smoke: "يتحمل التدخين الخفيف (مثل البرلمنت) ويمزجه بأسلوب بودري فخم." }
   ];
- 
+
   /* ---------- helpers ---------- */
   const $ = (s, r) => (r || document).querySelector(s);
   function el(tag, props) {
@@ -427,7 +424,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
   const isHex = c => /^#[0-9a-f]{6}$/i.test(c || "");
   const groupOf = p => (p.line === "Tobacco" || p.line === "Diamond") ? p.line : "Other";
   const lineLabel = p => LINES.find(l => l.key === groupOf(p)).en;
- 
+
   let toastTimer = null;
   function toast(msg) {
     const t = $("#toast");
@@ -436,7 +433,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => t.classList.remove("show"), 3200);
   }
- 
+
   /* ---------- storage ---------- */
   function load() {
     try {
@@ -456,7 +453,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
     }
   }
   let perfumes = load();
- 
+
   /* ---------- background scene ---------- */
   (function buildScene() {
     const BASE = 640;
@@ -493,9 +490,9 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
       }
       return { rects, wins };
     }
- 
+
     $("#skyBack").innerHTML = skyline(5, 0.78, false).rects;
- 
+
     const front = skyline(11, 1, true);
     const landmarks =
       /* Empire State Building */
@@ -505,7 +502,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
       /* One World Trade Center */
       `<polygon points="1098,642 1098,372 1120,300 1142,372 1142,642"/><rect x="1119.3" y="205" width="1.4" height="100"/>`;
     $("#sk").innerHTML = front.rects + landmarks + `<g fill="#FFC85A" opacity=".8">${front.wins}</g>`;
- 
+
     let glints = "";
     const gr = rng(3);
     for (let i = 0; i < 11; i++) {
@@ -513,7 +510,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
       glints += `<rect x="${(930 - w / 2 + (gr() - 0.5) * 20).toFixed(1)}" y="${652 + i * 15}" width="${w.toFixed(1)}" height="4" rx="2" opacity="${(0.8 - i * 0.06).toFixed(2)}"/>`;
     }
     $("#sunGlints").innerHTML = glints;
- 
+
     function pine(x, y, h) {
       let s = "";
       for (let i = 0; i < 3; i++) {
@@ -527,7 +524,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
       .map(p => pine(p[0], p[1], p[2])).join("");
     $("#banks").insertAdjacentHTML("beforeend", pines);
   })();
- 
+
   /* ---------- clock (Jerusalem) ---------- */
   const timeFmt = new Intl.DateTimeFormat("en-US", { timeZone: TZ, hour: "numeric", minute: "2-digit", second: "2-digit", hour12: true });
   const dateFmt = new Intl.DateTimeFormat("en-GB", { timeZone: TZ, weekday: "long", day: "numeric", month: "long", year: "numeric" });
@@ -547,7 +544,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
   tick();
   setInterval(tick, 1000);
   document.addEventListener("visibilitychange", tick);
- 
+
   /* ---------- bottle drawing ---------- */
   function bottleSVG(color, line, label) {
     const c = isHex(color) ? color : DEFAULT_COLOR;
@@ -587,7 +584,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
     if (p.image) container.append(el("img", { src: p.image, alt: p.name || "", loading: "lazy" }));
     else container.insertAdjacentHTML("beforeend", bottleSVG(p.color, p.line, p.name));
   }
- 
+
   /* ---------- collection view ---------- */
   function cardEl(p, i) {
     const rows = el("dl", { class: "rows" });
@@ -619,7 +616,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
       items.forEach((p, i) => root.append(cardEl(p, i)));
     }
   }
- 
+
   /* ---------- control panel ---------- */
   const dlg = $("#panel");
   const f = {
@@ -627,7 +624,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
     desc: $("#f-desc"), season: $("#f-season"), occ: $("#f-occ"), smoke: $("#f-smoke")
   };
   let draftImage = null, editingId = null, lineTouched = false;
- 
+
   function renderPreview() {
     fillMedia($("#preview"), { image: draftImage, color: f.color.value, line: f.line.value, name: f.name.value || "Perfume bottle" });
     $("#removePhoto").hidden = !draftImage;
@@ -655,7 +652,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
     showTab(which || "add");
   }
   function closePanel() { if (dlg.open) dlg.close(); }
- 
+
   $("#openPanel").addEventListener("click", () => openPanel("add"));
   $("#closePanel").addEventListener("click", closePanel);
   dlg.addEventListener("click", e => { if (e.target === dlg) closePanel(); });
@@ -668,7 +665,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
       showTab(next); $("#tab-" + next).focus();
     }
   });
- 
+
   f.color.addEventListener("input", renderPreview);
   f.line.addEventListener("change", () => { lineTouched = true; renderPreview(); });
   f.name.addEventListener("input", () => {
@@ -679,7 +676,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
     }
     renderPreview();
   });
- 
+
   function readFile(file) {
     return new Promise((res, rej) => {
       const r = new FileReader();
@@ -720,7 +717,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
     f.photo.value = "";
   });
   $("#removePhoto").addEventListener("click", () => { draftImage = null; renderPreview(); });
- 
+
   function slug(name) {
     const base = name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "perfume";
     return base + "-" + Math.random().toString(36).slice(2, 7);
@@ -751,7 +748,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
     if (card) card.scrollIntoView({ behavior: "smooth", block: "center" });
   });
   $("#cancelEdit").addEventListener("click", () => { resetForm(); });
- 
+
   function startEdit(id) {
     const p = perfumes.find(x => x.id === id);
     if (!p) return;
@@ -769,7 +766,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
     showTab("add");
     f.name.focus();
   }
- 
+
   /* two-step confirm buttons */
   function armed(btn, label, confirmLabel, action) {
     let t = null;
@@ -814,7 +811,7 @@ dialog::backdrop{background:rgba(20,4,8,.68);backdrop-filter:blur(3px)}
     const b = $("#restoreBtn"); b.classList.remove("armed"); b.textContent = "Restore original collection";
     toast("Original collection restored.");
   });
- 
+
   /* ---------- auto-fill with Claude ---------- */
   let sampleFn = null;
   function buildPrompt(name) {
@@ -872,7 +869,7 @@ Rules:
       if (!$("#autoStatus").textContent) $("#autoStatus").textContent = "Auto-fill suggests the details from the name. Review them before saving.";
     }
   })();
- 
+
   /* ---------- start ---------- */
   render();
   resetForm();
@@ -880,4 +877,3 @@ Rules:
 </script>
 </body>
 </html>
- 
